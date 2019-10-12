@@ -3,7 +3,8 @@ from weather import weather_data
 from clothes import gear_recommendation
 from twitter import tweet_recommendation
 
-def main():
+
+def main(event=None, context=None):
     ## Intitialisation
     config = configparser.ConfigParser()
     config.read('config.cfg')
@@ -16,6 +17,7 @@ def main():
 
     ## Tweet
     tweet_recommendation(config, weather_forecast, clothes)
+
 
 if __name__=='__main__':
     main()
