@@ -1,2 +1,5 @@
 .env
 config.cfg
+.DS_Store
+.idea/
+__pycache__/
