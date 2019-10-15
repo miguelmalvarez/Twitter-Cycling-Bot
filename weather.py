@@ -31,7 +31,7 @@ def extract_timeslot_weather_data(datapoint):
 def weather_data(config, morning_time=7, afternoon_time=18):
     weather_api_key = config['DEFAULT']['open_weather_key']
 
-    ## Sunrise / Sunset data (note: these times are computed for the day when the call is made)
+    # Sunrise / Sunset data (note: these times are computed for the day when the call is made)
     base_url = 'http://api.openweathermap.org/data/2.5/weather'
     city = 'London,uk'
     request = base_url + '?q={}&appid={}&units=metric'.format(city, weather_api_key)
@@ -40,7 +40,7 @@ def weather_data(config, morning_time=7, afternoon_time=18):
     day_weather['sunrise'] = datetime.fromtimestamp(data['sys']['sunrise'])
     day_weather['sunset'] = datetime.fromtimestamp(data['sys']['sunset'])
 
-    ## Forecast 3-hour windows data
+    # Forecast 3-hour windows data
     base_url = 'http://api.openweathermap.org/data/2.5/forecast'
     city = 'London,uk'
     request = base_url + '?q={}&appid={}&units=metric'.format(city, weather_api_key)
