@@ -8,7 +8,7 @@ def time_slot_datapoint(openweather_response, day_to_predict, starting_timings):
     for datapoint in openweather_response['list']:
         if datetime.fromtimestamp(datapoint['dt']).date() == day_to_predict and datetime.fromtimestamp(
                 datapoint['dt']).hour in starting_timings:
-            return (datapoint)
+            return datapoint
 
 
 def time_datapoint(openweather_response, day_to_predict, time):
@@ -23,10 +23,10 @@ def extract_timeslot_weather_data(datapoint):
     weather['max_temperature'] = datapoint['main']['temp_max']
     weather['humidity'] = datapoint['main']['humidity']
     weather['wind'] = datapoint['wind']['speed']
+    weather['meteorology'] = datapoint["weather"][0]['description']
     return weather
 
 
-## TODO add 7am and 6pm as variables
 # It returns weather forecast data for today (if ran before 7am) or for tomorrow otherwise
 def weather_data(config, morning_time=7, afternoon_time=18):
     weather_api_key = config['DEFAULT']['open_weather_key']
