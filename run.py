@@ -3,19 +3,17 @@ from weather import weather_data
 from clothes import gear_recommendation
 from twitter import tweet_recommendation
 
+# TODO: Add logs
+# TODO: Add debugging flag with no tweeting
+
 
 def main(event=None, context=None):
-    ## Intitialisation
+    # Intitialisation
     config = configparser.ConfigParser()
     config.read('config.cfg')
 
-    ## Weather
     weather_forecast = weather_data(config)
-
-    ## Recommendation
     clothes = gear_recommendation(weather_forecast)
-
-    ## Tweet
     tweet_recommendation(config, weather_forecast, clothes)
 
 
