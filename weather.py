@@ -12,8 +12,8 @@ def time_slot_datapoint(openweather_response, day_to_predict, starting_timings):
 
 
 def time_datapoint(openweather_response, day_to_predict, time):
-    # The hours that will fit a 3-hour window at the given time are t-2, t-1 and t
-    return time_slot_datapoint(openweather_response, day_to_predict, [time - 2, time - 1, time])
+    # The  best (3 hr) window of time to define our targeet timing will start at t-1, t or t+1
+    return time_slot_datapoint(openweather_response, day_to_predict, [time-1, time, time+1])
 
 
 def extract_timeslot_weather_data(datapoint):
