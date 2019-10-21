@@ -4,14 +4,14 @@ def gear_recommendation(weather_forecast):
                           weather_forecast['afternoon']['min_temperature'])
 
     if min_temperature < 5:
-        return "Wear jacket with underskin, thick globes, long bib and thermal socks. " \
+        return "Wear jacket with underskin, thick gloves, long bib and thermal socks. " \
                "Cover for head and neck."
     elif min_temperature < 10:
-        return "Wear jacket, thick globes and long bib. Cover for head and neck."
+        return "Wear jacket, thick gloves and long bib. Cover for head and neck."
     elif min_temperature < 15:
-        return "Wear long mallot or mallot with arm warmers, long globes and long bib " \
+        return "Wear long mallot or mallot with arm warmers, long gloves and long bib " \
                "or short with leg warmers. Cover for neck."
     elif min_temperature < 20:
-        return "Wear mallot (carry arm warmers in case), fingerless globes and short bib."
+        return "Wear mallot (carry arm warmers in case), fingerless gloves and short bib."
     else:
-        return "Wear thin mallot, fingerless globes and short bib."
+        return "Wear thin mallot, fingerless gloves and short bib."
